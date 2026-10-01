@@ -1,6 +1,6 @@
 // Thin fetch wrapper. Auth is carried by httpOnly cookies set by the API, so no token
 // is ever stored in JavaScript-accessible storage.
-const BASE = import.meta.env.VITE_API_URL || '/api'
+const BASE = (import.meta.env.VITE_API_URL || 'https://apni-dekaan-backend.vercel.app/api').replace(/\/+$/, '')
 
 export class ApiError extends Error {
   constructor(status, body) {
